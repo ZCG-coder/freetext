@@ -1,0 +1,22 @@
+.ft-err {
+    color: red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form#ft-chat-msg-box {
+    display: flex;
+
+    textarea {
+        display: inline-block;
+        width: 95%;
+        resize: vertical;
+    }
+
+    button {
+        display: inline-block;
+        width: 5%;
+    }
+}

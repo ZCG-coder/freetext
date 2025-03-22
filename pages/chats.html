@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>freetext - chats</title>
+
+    <script type="text/javascript">
+        window.ftChats = true;
+    </script>
+    <script src="/js/appwrite.js"></script>
+    <script>
+        const { Client, Account } = Appwrite;
+    </script>
+
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>lists</h1>
+
+<a href="/pages/new_list.html">[new list]</a>
+<a href="/pages/logout.html">[log out]</a>
+
+<table>
+    <thead>
+        <tr>
+            <td></td>
+            <td>name</td>
+            <td>(sender) last msg</td>
+            <td>date (time UTC+8)</td>
+        </tr>
+    </thead>
+    <tbody id="ft-grps-body">
+    </tbody>
+</table>
+</body>
+</html>

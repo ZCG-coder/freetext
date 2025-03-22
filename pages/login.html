@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>freetext - login</title>
+
+    <script src="/js/appwrite.js"></script>
+    <script type="text/javascript">
+        window.ftLogin = true;
+        const { Client, Account } = Appwrite;
+    </script>
+
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+<h1>log in</h1>
+<div id="navbar"></div>
+
+<p>please type your email and password to log in.</p>
+
+<form id="ft-login-form">
+    <p><label for="ft-email">
+        email <input type="email" name="ft-email" id="ft-email" autocomplete="section-login">
+    </label></p>
+
+    <p><label for="ft-passwd">
+        password <input type="password" name="ft-passwd" id="ft-passwd" autocomplete="section-login current-password">
+    </label></p>
+
+    <p id="ft-login-error" class="ft-err"></p>
+    <p id="ft-login-info"></p>
+
+    <button type="submit">submit</button>
+</form>
+
+</body>
+</html>

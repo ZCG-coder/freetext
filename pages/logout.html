@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>freetext - logout</title>
+
+    <script src="/js/appwrite.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        const { Client, Account } = Appwrite;
+
+        eventHndlFunc(window, "DOMContentLoaded", async function() {
+            logout();
+        });
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>logging out...</h1>
+<p>please also close relevant browser windows/tabs</p>
+</body>
+</html>
