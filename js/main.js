@@ -28,7 +28,7 @@ function getAccount() {
 }
 
 function handleLogin() {
-    window.location.replace("/pages/chats.html")
+    window.location.replace("/freetext/chats.html")
 }
 
 function loginAddin() {
@@ -62,7 +62,7 @@ async function chatsAddin() {
     try {
         userObj = await account.get();
     } catch (err) {
-        window.location.replace("/pages/login.html");
+        window.location.replace("/freetext/login.html");
         return;
     }
 
@@ -99,7 +99,7 @@ async function chatsAddin() {
             chatsBody.innerHTML += `
             <tr>
                 <td><input type="checkbox"></td>
-                <td><a href="/pages/view.html?id=${id}">${name}</a></td>
+                <td><a href="/freetext/view.html?id=${id}">${name}</a></td>
                 <td>(${lastMsgSender}) ${text}</td>
                 <td>${lastMsgDate}</td>
             </tr>
@@ -108,7 +108,7 @@ async function chatsAddin() {
             chatsBody.innerHTML += `
             <tr>
                 <td><input type="checkbox"></td>
-                <td><a href="/pages/view.html?id=${id}">${name}</a></td>
+                <td><a href="/freetext/view.html?id=${id}">${name}</a></td>
                 <td><i>empty</i></td>
                 <td>n/a</td>
             </tr>
@@ -121,7 +121,7 @@ async function chatsAddin() {
 async function updateMsgs() {
     const queries = parseQuery(window.location.search.substring(1));
     if (!queries.id)
-        window.location.replace("/pages/chats.html");
+        window.location.replace("/freetext/chats.html");
 
     const msgResponse = await fetch(`${hostname}/msg`, {
         method: "GET",
@@ -165,7 +165,7 @@ async function chatViewAddin() {
     try {
         window.userObj = await account.get();
     } catch (err) {
-        window.location.replace("/pages/login.html");
+        window.location.replace("/freetext/login.html");
         return;
     }
     await updateMsgs()
@@ -187,7 +187,7 @@ async function sendMsg() {
 
     const queries = parseQuery(window.location.search.substring(1));
     if (!queries.id)
-        window.location.replace("/pages/chats.html");
+        window.location.replace("/freetext/chats.html");
     const msgBoxElem = document.getElementById("ft-chat-msg");
     const msg = msgBoxElem.value;
     if (!msg)
@@ -215,7 +215,7 @@ async function logout() {
         const account = getAccount();
         await account.deleteSession("current");
     } catch (err) {}
-    window.location.replace("/index.html");
+    window.location.replace("/freetext/index.html");
 }
 
 window.addEventListener("DOMContentLoaded", async function() {
